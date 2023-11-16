@@ -18,6 +18,6 @@
         </environment>
     </environments>
     <mappers>
-<!--        <mapper resource="mybatis/mapperxml/BoardMapper.xml" />-->
+        <mapper resource="com/example/jspmvc2/mybatis/mapper/MVCBoardMapper.xml" />
     </mappers>
 </configuration>

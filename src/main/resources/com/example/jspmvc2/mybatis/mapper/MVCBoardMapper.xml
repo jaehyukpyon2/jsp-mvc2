@@ -5,7 +5,7 @@
 <mapper namespace="com.example.jspmvc2.mybatis.mapper.MVCBoardMapper">
     <select id="selectCount" parameterType="map" resultType="int">
         select count(*)
-        from board
+        from mvcboard
         <if test="searchWord != null and !searchWord.equals('')">
             where
             <choose>
@@ -19,11 +19,11 @@
         </if>
     </select>
 
-    <select id="selectListWithSearchField" parameterType="map" resultType="model1.board.BoardDTO">
-        select *
-        from board
+    <select id="selectListPage" parameterType="map" resultType="com.example.jspmvc2.dto.MVCBoardDTO">
+        SELECT *
+        FROM mvcboard
         <if test="searchWord != null and !searchWord.equals('')">
-            where
+            WHERE
             <choose>
                 <when test="searchField == 'title'">
                     title like concat('%', #{searchWord}, '%')
@@ -35,28 +35,9 @@
         </if>
     </select>
 
-    <insert id="insertWrite" parameterType="model1.board.BoardDTO">
-        insert
-        into board(title, content, id, visitcount)
-        values(#{title}, #{content}, #{id}, 0)
+    <insert id="insertWrite" parameterType="com.example.jspmvc2.dto.MVCBoardDTO">
+        INSERT
+        INTO mvcboard(idx, name, title, content, ofile, sfile, pass)
+        VALUES(#{idx}, #{name}, #{title}, #{content}, #{ofile}, #{sfile}, #{pass})
     </insert>
-
-    <select id="selectView" resultType="model1.board.BoardDTO">
-        select b.*, m.name
-        from board b inner join member m
-            on b.id = m.id
-        where num = #{num}
-    </select>
-
-    <update id="updateVisitCount">
-        update board
-        set visitcount = visitcount + 1
-        where num = #{num}
-    </update>
-
-    <update id="updateEdit" parameterType="model1.board.BoardDTO">
-        update board
-        set title = #{title}, content = #{content}
-        where num = #{num}
-    </update>
 </mapper>

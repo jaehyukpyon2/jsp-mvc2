@@ -9,7 +9,8 @@ public class MyBatisSessionFactory {
     private static SqlSessionFactory sqlSessionFactory = null;
 
     static {
-        sqlSessionFactory = MyBatisConfig.getSqlSessionFactory();
+        MyBatisConfig myBatisConfig = new MyBatisConfig();
+        sqlSessionFactory = myBatisConfig.getSqlSessionFactory();
     }
 
     public static SqlSession getSqlSession() {
