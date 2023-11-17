@@ -1,4 +1,4 @@
-package com.example.filter;
+package com.example.jspmvc2.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

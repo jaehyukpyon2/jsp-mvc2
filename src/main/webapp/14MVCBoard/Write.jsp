@@ -36,7 +36,7 @@
 </head>
 <body>
     <form name="writeFrm" method="post" enctype="multipart/form-data"
-          action="../mvcboard/write.do" onsubmit="return validateForm(this);">
+          action="${pageContext.request.contextPath}/mvcboard/write.do" onsubmit="return validateForm(this);">
         <table border="1" width="90%">
             <tr>
                 <td>작성자</td>
@@ -53,7 +53,7 @@
             <tr>
                 <td>내용</td>
                 <td>
-                    <textarea name="content" style="width: 90%;height: 100px;"></textarea>
+                    <textarea name="content" style="width: 90%; height: 100px;"></textarea>
                 </td>
             </tr>
             <tr>
