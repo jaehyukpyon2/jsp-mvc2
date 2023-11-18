@@ -115,6 +115,10 @@
         </div>
     </c:if>
 
+    <div>
+        <a href="${pageContext.request.contextPath}/mvcboard/write.do">[글 작성하기]</a>
+    </div>
+
 <%--${empty map.notExists ? "이거출력" : "이거아님"}--%>
 
 <script>

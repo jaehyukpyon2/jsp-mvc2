@@ -99,7 +99,8 @@
 
     <update id="updatePost" parameterType="com.example.jspmvc2.dto.MVCBoardDTO">
         update mvcboard
-        set title = ?, name = ?, content = ?, ofile = ?, sfile = ?
+        set title = #{title}, name = #{name},
+            content = #{content}, ofile = #{ofile}, sfile = #{sfile}
         where idx = #{idx} and pass = #{pass}
     </update>
 </mapper>
