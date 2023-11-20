@@ -14,6 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Locale;
 
@@ -27,6 +28,8 @@ public class FileUtil {
         Files.createDirectories(saveDirectoryPath);
 
         Part part = req.getPart("ofile");
+
+        Collection<Part> parts = req.getParts();
 
         String partHeader = part.getHeader("content-disposition");
         System.out.println("partHeader=" + partHeader);

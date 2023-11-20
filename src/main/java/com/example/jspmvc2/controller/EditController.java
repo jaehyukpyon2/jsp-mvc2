@@ -57,7 +57,8 @@ public class EditController extends HttpServlet {
         dto.setContent(content);
         dto.setPass(pass);
 
-        if (originalFileName != "") {
+        if (originalFileName != "" && !originalFileName.equals("") && !originalFileName.isEmpty()) {
+            // isEmpty()만 하면 되긴 하는데...
             String savedFileName = FileUtil.renameFile(saveDirectory, originalFileName);
             dto.setOfile(originalFileName);
             dto.setSfile(savedFileName);
