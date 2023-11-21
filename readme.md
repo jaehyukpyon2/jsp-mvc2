@@ -64,15 +64,15 @@ root 경로는 src/main/resource로부터 시작하니, 그 이후부터 적어�
   ![5](https://github.com/jaehyukpyon2/jsp-mvc2/assets/145942491/b7282510-20bd-4d8e-8e94-4fe0e53a8f24)
 
 8. return type
-* <insert></insert> query의 실행 결과 : 해당 쿼리로 실제 저장된 행(record)의 개수
-* <select></select> query의 실행 결과 : 보통 DTO 클래스를 지정해서 그 DTO 의 인스턴스 필드 값을 사용
-* <update></update> query의 실행 결과 : 해당 쿼리로 실제 update 된 행의 개수
-* <delete></delete> query의 실행 결과 : 해당 쿼리로 실제 delete 된 행의 개수
+* &lt;insert&gt;&lt;/insert&gt; query의 실행 결과 : 해당 쿼리로 실제 저장된 행(record)의 개수
+* &lt;select&gt;&lt;/select&gt; query의 실행 결과 : 보통 DTO 클래스를 지정해서 그 DTO 의 인스턴스 필드 값을 사용
+* &lt;update&gt;&lt;/update&gt; query의 실행 결과 : 해당 쿼리로 실제 update 된 행의 개수
+* &lt;delete&gt;&lt;/delete&gt; query의 실행 결과 : 해당 쿼리로 실제 delete 된 행의 개수
 
 9. Java 클래스의 변수명과 데이터베이스 컬럼명의 불일치
     * Java에서는 메서드명, 변수명을 작성할 때 camel case를 사용하고,
     * 데이터베이스에서는 컬럼명을 작성할 때 snake case를 사용합니다.
-    * 이에 이 두 개 사이에 불일치가 발생하는데, mybatis-config.xml 파일의 settings 태그 안의 setting 태그를 보면
-      * setting name="mapUnderscoreToCamelCase" value="true"
+    * 이에 이 두 개 사이에 불일치가 발생하는데, mybatis-config.xml 파일의 &lt;settings&gt; 태그 안의 &lt;setting&gt; 태그를 보면
+      * &lt;setting name="mapUnderscoreToCamelCase" value="true" /&gt;
       * 이와같이 설정되어 있습니다
       * 따라서 Java에서는 camel case를, 데이터베이스에서는 snake case를 문제없이 각각 사용할 수 있습니다
